@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Scissors-paper</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="game">
+      <h1>Игра: "Камень-Ножницы-Бумага"</h1>
+      <p>"Здесь все становятся либо очень богатыми, либо мёртвыми..."</p>
+
+      <!-- //------------------------------------------------------------------ -->
+      <div class="counter-block">
+        <div class="count count-user">0</div>
+        <span>vs</span>
+        <div class="count count-comp">0</div>
+      </div>
+
+      <!-- //------------------------------------------------------------------ -->
+      <div class="game-zone-container">
+        <div class="user-zone">
+          <button class="btn rock-left" data-btn="rock"></button>
+          <button class="btn scissors-left" data-btn="scissors"></button>
+          <button class="btn paper-left" data-btn="paper"></button>
+          <div class="btn winer winer-left" data-set="win"></div>
+          <div class="btn game-over game-over-left" data-set="los"></div>
+        </div>
+        <div class="hole"></div>
+        <!-- //------------------------------------------------------------------ -->
+        <div class="computer-zone">
+          <button class="btn rock-right" data-btn="rock"></button>
+          <button class="btn scissors-right" data-btn="scissors"></button>
+          <button class="btn paper-right" data-btn="paper"></button>
+          <div class="btn winer winer-right" data-set="win"></div>
+          <div class="btn game-over game-over-right" data-set="los"></div>
+        </div>
+      </div>
+      <!-- //------------------------------------------------------------------ -->
+      <h4 class="result">"Стреляй, а не болтай!"</h4>
+
+      <div class="replay">
+        <button>Cыграть ещё разок</button>
+      </div>
+    </div>
+    <!-- //------------------------------------------------------------------ -->
+    <audio src="#" class="sound"></audio>
+    <script src="js/script.js"></script>
+  </body>
+</html>

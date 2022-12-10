@@ -1,0 +1,307 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik Mono One", sans-serif;
+  overflow: hidden;
+}
+.game {
+  width: 1600px;
+  height: 1200px;
+  margin: 0 auto;
+  padding: 80px;
+  background-image: url(../img/2016-10-06-western-country-cowboy-Q6AL.jpg);
+}
+.game h1 {
+  text-align: right;
+  color: rgba(0, 0, 0, 0.785);
+}
+.game p {
+  margin-top: 25px;
+  font-size: 12px;
+  text-align: right;
+  color: rgba(0, 0, 0, 0.785);
+}
+.game h4 {
+  margin-top: 50px;
+  text-align: right;
+}
+.counter-block {
+  width: 760px;
+  color: rgba(0, 0, 0, 0.785);
+  border: none;
+  margin-left: auto;
+  margin-top: 120px;
+
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+
+  font-size: 54px;
+}
+
+.count {
+  position: relative;
+  width: 50px;
+  text-align: center;
+}
+.count::before {
+  content: "";
+  display: block;
+  padding: 3px 8px;
+
+  color: rgba(0, 0, 0, 0.544);
+  font-size: 12px;
+  position: absolute;
+  top: 50px;
+}
+.count-user::before {
+  content: "user";
+  left: -5px;
+}
+.count-comp::before {
+  content: "comp";
+  right: -5px;
+}
+
+.game-zone-container {
+  margin-top: 120px;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.user-zone {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-image: url("../img/baraban_lev.png");
+  background-size: cover;
+  position: relative;
+}
+.resBox {
+  margin-top: 20px;
+  margin-right: 100px;
+}
+
+.hole {
+  width: 200px;
+  height: 200px;
+  background-image: url("../img/5a39f3fe4c4c23.05128043151374745431253403.png");
+  background-size: cover;
+}
+.computer-zone {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-image: url("../img/baraban_prav.png");
+  background-size: cover;
+
+  position: relative;
+}
+
+.scissors-left {
+  background-image: url("../img/lev.Nojnizy.png");
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  top: 2%;
+  transform: translate(-50%);
+}
+
+.btn,
+.winer,
+.game-over {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 5px solid rgb(239, 239, 239);
+  cursor: pointer;
+  margin: 5px;
+  transition: 0.2s;
+  overflow: hidden;
+  box-shadow: 3px 3px 10px #000;
+  outline: none;
+}
+
+/* //------------------------------------------------------------------ */
+.rock-left {
+  background: url("../img/lev.Kamen.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 23%;
+  top: 19%;
+  transform: translate(-50%);
+}
+.scissors-left {
+  background: url("../img/lev.Nojnizy.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  top: 4.5%;
+  transform: translate(-50%);
+}
+.paper-left {
+  background: url("../img/lev.Bumaga.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 77%;
+  top: 19%;
+  transform: translate(-50%);
+}
+.winer-left {
+  background: url("../img/lev.Fatality.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 49.3%;
+  top: 65%;
+  transform: translate(-50%);
+}
+.game-over-left {
+  background: url("../img/Game\ over.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 77%;
+  top: 50%;
+  transform: translate(-50%);
+}
+/* //------------------------------------------------------------------ */
+.rock-left.active {
+  background: url("../img/lev.KamenActive\ 2.png") center no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  border: 5px solid rgb(254, 239, 206);
+  box-shadow: 0 0 15px 8px rgb(255, 181, 21);
+}
+.scissors-left.active {
+  background: url("../img/lev.NojnizyActive2.png") center no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  border: 5px solid rgb(254, 239, 206);
+  box-shadow: 0 0 15px 8px rgb(255, 181, 21);
+}
+.paper-left.active {
+  background: url("../img/lev.BumagaActiv2.png") center no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  border: 5px solid rgb(254, 239, 206);
+  box-shadow: 0 0 15px 8px rgb(255, 181, 21);
+}
+.winer-left.active {
+  background: url("../img/lev.FatalityActive2.png") center no-repeat;
+  background-size: cover;
+  border: 5px solid rgb(192, 212, 135);
+  box-shadow: 0 0 15px 8px rgb(57, 118, 0);
+}
+.game-over-left.active,
+.game-over-right.active {
+  background: url("../img/Game\ over.Active.png") center no-repeat;
+  background-size: cover;
+  border: 5px solid rgb(220, 149, 149);
+  box-shadow: 0 0 15px 10px rgb(116, 1, 1);
+}
+/* //------------------------------------------------------------------ */
+.rock-right {
+  background: url("../img/prav.Kamen.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 79%;
+  top: 19%;
+  transform: translate(-50%);
+}
+
+.scissors-right {
+  background: url("../img/prav.Nojnizy.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 51.5%;
+  top: 4.8%;
+  transform: translate(-50%);
+}
+.paper-right {
+  background: url("../img/prav.Bumaga.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 24.5%;
+  top: 20%;
+  transform: translate(-50%);
+}
+.winer-right {
+  background: url("../img/prav.Fatality.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 52%;
+  top: 65%;
+  transform: translate(-50%);
+}
+.game-over-right {
+  background: url("../img/Game\ over.png") center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 25%;
+  top: 50%;
+  transform: translate(-50%);
+}
+/* //------------------------------------------------------------------ */
+.computer-zone.blink .paper-right {
+  animation: blink 0.3s infinite;
+}
+.computer-zone.blink .scissors-right {
+  animation: blink 0.3s 0.1s infinite;
+}
+.computer-zone.blink .rock-right {
+  animation: blink 0.3s 0.2s infinite;
+}
+.computer-zone.blink {
+  animation-play-state: paused;
+}
+@keyframes blink {
+  100% {
+    border: 5px solid rgb(255, 198, 184);
+    box-shadow: 0 0 15px 8px rgb(162, 38, 0);
+  }
+}
+.rock-right.active {
+  background: url("../img/prav.KamenActive2.png") center no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  border: 5px solid rgb(255, 198, 184);
+  box-shadow: 0 0 15px 8px rgb(162, 38, 0);
+}
+
+.scissors-right.active {
+  background: url("../img/prav.NojnizyActive2.png") center no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  border: 5px solid rgb(255, 198, 184);
+  box-shadow: 0 0 15px 8px rgb(162, 38, 0);
+}
+.paper-right.active {
+  background: url("../img/prav.BumagaActive2.png") center no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  border: 5px solid rgb(255, 198, 184);
+  box-shadow: 0 0 15px 8px rgb(162, 38, 0);
+}
+.winer-right.active {
+  background: url("../img/prav.Fatality.Active2.png") center no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  border: 5px solid rgb(192, 212, 135);
+  box-shadow: 0 0 15px 8px rgb(57, 118, 0);
+}
+
+.replay {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin-top: 40px;
+}
+.replay button {
+  cursor: pointer;
+  width: 220px;
+  height: 50px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(223, 219, 175);
+  transition: 1s all ease;
+}
